@@ -1,5 +1,5 @@
 # travail_3_realiter_mixte
-travail 3 realiter mixte, Lucas Bonneau, Jérémy Theriault, Zackary Warren
+TP3 dans le cadre du cours de Realité Mixte par Lucas Bonneau, Jérémy Theriault, Zackary Warren
 
 
 ## Description du projet
