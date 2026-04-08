@@ -11,3 +11,10 @@ Jeu en réalité virtuel qui se passe à l'époque médiéval, le but sera d'all
  - La troisième mechanique sera le changement entre le jour et la nuit, la nuit les livraisons seront fois deux.
  - La quatrieme sera un système de réputation, si le livreur rate une livraison ou apporte un lettre sans sceau sa réputatation baissera et si il fait des bonnes livraisons elle montera
  - La cinquième sera un système d'argent liée au nombre de temps qu'une livraison prend et de la personne a qui le livreur la livre, si la lettre s'adresse au prince elle vaudras plus cher qu'à un paysan  
+
+
+## Assets 
+- https://free-game-assets.itch.io/free-shrubs-flowers-and-mushrooms-3d-low-poly-pack
+- https://free-game-assets.itch.io/free-stone-3d-low-poly-pack
+- https://free-game-assets.itch.io/free-medieval-props-3d-low-poly-models
+- https://free-game-assets.itch.io/free-medieval-3d-people-low-poly-pack
