@@ -1,4 +1,4 @@
-# travail_3_realiter_mixte
+# TP3 RÉALITÉ MIXTE
 TP3 dans le cadre du cours de Realité Mixte par Lucas Bonneau, Jérémy Theriault, Zackary Warren
 
 
