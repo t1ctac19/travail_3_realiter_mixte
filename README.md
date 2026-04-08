@@ -30,3 +30,4 @@ Jeu en réalité virtuel qui se passe à l'époque médiéval, le but sera d'all
 -  troisième mécanique: Jérémy
 -  Quatrième mécanique: Jérémy
 -  Cinquième mécanique: Lucas et Zackary
+![diagramme](medias/diagramme.png)
