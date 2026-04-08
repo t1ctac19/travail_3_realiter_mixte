@@ -21,3 +21,12 @@ Jeu en réalité virtuel qui se passe à l'époque médiéval, le but sera d'all
 
 
 ![moodboard]()
+
+
+## Échéancier
+-  Map: tout le monde
+-  Première mécanique: Zackary
+-  Deuxième mécanique: Lucas
+-  troisième mécanique: Jérémy
+-  Quatrième mécanique: Jérémy
+-  Cinquième mécanique: Lucas et Zackary
