@@ -19,7 +19,7 @@ Jeu en réalité virtuel qui se passe à l'époque médiéval, le but sera d'all
 - https://free-game-assets.itch.io/free-medieval-props-3d-low-poly-models
 - https://free-game-assets.itch.io/free-medieval-3d-people-low-poly-pack
 
-
+## Moodboard
 ![moodboard](medias/moodboard.png)
 
 
@@ -30,4 +30,6 @@ Jeu en réalité virtuel qui se passe à l'époque médiéval, le but sera d'all
 -  troisième mécanique: Jérémy
 -  Quatrième mécanique: Jérémy
 -  Cinquième mécanique: Lucas et Zackary
+
+## Diagramme
 ![diagramme](medias/diagramme.png)
