@@ -37,3 +37,4 @@ Jeu en réalité virtuel qui se passe à l'époque médiéval, le but sera d'all
 ## Thème sonore
 - Ambiance musicale : https://www.youtube.com/watch?v=jZ7a1yPaJh0
 - Ambiance Ville : https://youtu.be/o-b5nMCj5hI?si=UKE9jiueRNSiSUfK
+- Ambiance nature + ville : https://youtu.be/ugLwYV1GSvo?si=kb3cLcTDrTYlTwf8
