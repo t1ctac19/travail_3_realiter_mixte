@@ -33,3 +33,7 @@ Jeu en réalité virtuel qui se passe à l'époque médiéval, le but sera d'all
 
 ## Diagramme
 ![diagramme](medias/diagramme.png)
+
+## Thème sonore
+- Ambiance musicale : https://www.youtube.com/watch?v=jZ7a1yPaJh0
+- Ambiance Ville : https://youtu.be/o-b5nMCj5hI?si=UKE9jiueRNSiSUfK
