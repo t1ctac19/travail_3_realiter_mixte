@@ -20,7 +20,7 @@ Jeu en réalité virtuel qui se passe à l'époque médiéval, le but sera d'all
 - https://free-game-assets.itch.io/free-medieval-3d-people-low-poly-pack
 
 
-![moodboard]()
+![moodboard](medias/moodboard.png)
 
 
 ## Échéancier
