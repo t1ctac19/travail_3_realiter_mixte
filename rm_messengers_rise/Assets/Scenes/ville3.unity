@@ -21171,7 +21171,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -51844,6 +51856,22 @@ PrefabInstance:
     - target: {fileID: 2500632864333570799, guid: baffb24dc3aa16f4cad3632df6524dcd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5500543973999639713, guid: baffb24dc3aa16f4cad3632df6524dcd, type: 3}
+      propertyPath: m_UseForceGrab
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5500543973999639713, guid: baffb24dc3aa16f4cad3632df6524dcd, type: 3}
+      propertyPath: m_SelectActionTrigger
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756595288674852906, guid: baffb24dc3aa16f4cad3632df6524dcd, type: 3}
+      propertyPath: m_UseForceGrab
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5756595288674852906, guid: baffb24dc3aa16f4cad3632df6524dcd, type: 3}
+      propertyPath: m_SelectActionTrigger
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7615207544510345925, guid: baffb24dc3aa16f4cad3632df6524dcd, type: 3}
       propertyPath: m_Name
