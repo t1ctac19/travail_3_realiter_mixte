@@ -4,28 +4,69 @@ using System.Collections.Generic;
 
 public class SocketRandomizer : MonoBehaviour
 {
-    // Liste de tous tes sockets (à remplir dans l'Inspecteur)
     public List<XRSocketInteractor> allSockets;
+
+    // Cette variable va mémoriser le socket qui a été choisi au hasard
+    private XRSocketInteractor socketActif;
 
     void Start()
     {
         ActivateOneRandomSocket();
+        EteindreLigne(); // On s'assure que la ligne est éteinte au démarrage du jeu
     }
 
     public void ActivateOneRandomSocket()
     {
         if (allSockets.Count == 0) return;
 
-        // 1. Choisir un index au hasard
         int randomIndex = Random.Range(0, allSockets.Count);
 
-        // 2. Parcourir la liste pour activer le bon et éteindre les autres
         for (int i = 0; i < allSockets.Count; i++)
         {
-            // On active seulement celui qui correspond à l'index choisi
-            allSockets[i].gameObject.SetActive(i == randomIndex);
-        }
+            allSockets[i].enabled = (i == randomIndex);
 
-        Debug.Log("Socket actif : " + allSockets[randomIndex].name);
+            if (i == randomIndex)
+            {
+                socketActif = allSockets[i]; // On enregistre le socket gagnant
+            }
+        }
+    }
+
+    // Fonction à appeler quand tu PRENDS l'objet
+    public void AllumerLigne()
+    {
+        if (socketActif != null)
+        {
+            // On cherche spécifiquement l'enfant qui s'appelle "Line"
+            Transform childLine = socketActif.transform.Find("Line");
+
+            if (childLine != null)
+            {
+                var visual = childLine.GetComponent<XRInteractorLineVisual>();
+                if (visual != null) visual.enabled = true;
+
+                var line = childLine.GetComponent<LineRenderer>();
+                if (line != null) line.enabled = true;
+            }
+        }
+    }
+
+    // Fonction à appeler quand tu LÂCHES l'objet (ou le mets dans le socket)
+    public void EteindreLigne()
+    {
+        if (socketActif != null)
+        {
+            // On cherche spécifiquement l'enfant qui s'appelle "Line"
+            Transform childLine = socketActif.transform.Find("Line");
+
+            if (childLine != null)
+            {
+                var visual = childLine.GetComponent<XRInteractorLineVisual>();
+                if (visual != null) visual.enabled = false;
+
+                var line = childLine.GetComponent<LineRenderer>();
+                if (line != null) line.enabled = false;
+            }
+        }
     }
 }
