@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{3b37e5e7-ce95-4954-bad2-f06c2f15d7dd}">
+		<property name="assetPath">
+			<value>Ambient Wind Loop 1.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>100</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{beaa043c-a726-4956-be22-2d41e32ebb72}</destination>
+		</relationship>
+	</object>
+</objects>
