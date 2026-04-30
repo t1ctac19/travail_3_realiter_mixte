@@ -12,7 +12,12 @@ public class SocketRandomizer : MonoBehaviour
     void Start()
     {
         ActivateOneRandomSocket();
-        EteindreLigne(); // On s'assure que la ligne active est éteinte au démarrage
+        
+        // Correction : On utilise la fonction utilitaire pour éteindre au démarrage
+        if (socketActif != null)
+        {
+            ChangerEtatLigne(socketActif, false);
+        }
     }
 
     public void ActivateOneRandomSocket()
@@ -24,7 +29,6 @@ public class SocketRandomizer : MonoBehaviour
         
         foreach (var socket in allSockets)
         {
-            // "hasSelection" vérifie si le socket contient un objet
             if (!socket.hasSelection) 
             {
                 socketsVides.Add(socket);
@@ -36,68 +40,107 @@ public class SocketRandomizer : MonoBehaviour
 
         // 2. On choisit un socket au hasard PARMI LES VIDES
         int randomIndex = Random.Range(0, socketsVides.Count);
-        socketActif = socketsVides[randomIndex]; // Voici le nouveau gagnant
+        socketActif = socketsVides[randomIndex]; 
 
         // 3. On met à jour l'état de tous les sockets de la scène
         foreach (var socket in allSockets)
         {
             if (socket.hasSelection)
             {
-                // CRUCIAL : Si le socket a déjà un objet, il DOIT rester activé pour le retenir !
+                // Si le socket a déjà un objet, il DOIT rester activé pour le retenir !
                 socket.enabled = true; 
-                ChangerEtatLigne(socket, false); // On garde sa ligne éteinte
+                ChangerEtatLigne(socket, false); 
             }
             else
             {
                 // S'il est vide, on l'active SEULEMENT si c'est le nouveau socket actif
                 socket.enabled = (socket == socketActif);
-                ChangerEtatLigne(socket, false); // On éteint la ligne par défaut
+                ChangerEtatLigne(socket, false); 
             }
         }
     }
 
-    // Fonction à appeler quand tu PRENDS l'objet
-    public void AllumerLigne()
+    // --- GESTION DE L'AFFICHAGE DE LA LIGNE ---
+
+    // Fonction à appeler quand l'objet est PRIS (Select Entered sur l'Objet)
+    public void AllumerLigneSiJoueur(SelectEnterEventArgs args)
     {
+        if (args.interactorObject is XRSocketInteractor) return;
         ChangerEtatLigne(socketActif, true);
     }
 
-    // Fonction à appeler quand tu LÂCHES l'objet (ou le mets dans le socket)
-    public void EteindreLigne()
+    // Fonction à appeler quand l'objet est LÂCHÉ (Select Exited sur l'Objet)
+    public void EteindreLigneSiJoueur(SelectExitEventArgs args)
     {
+        if (args.interactorObject is XRSocketInteractor) return;
         ChangerEtatLigne(socketActif, false);
     }
 
-    // --- NOUVELLE FONCTION UTILITAIRE ---
-    // Gère l'allumage et l'extinction de la ligne pour n'importe quel socket
     private void ChangerEtatLigne(XRSocketInteractor socket, bool etat)
     {
         if (socket != null)
         {
-            // On cherche spécifiquement l'enfant qui s'appelle "Line"
             Transform childLine = socket.transform.Find("Line");
-
             if (childLine != null)
             {
-                var visual = childLine.GetComponent<XRInteractorLineVisual>();
-                if (visual != null) visual.enabled = etat;
-
-                var line = childLine.GetComponent<LineRenderer>();
-                if (line != null) line.enabled = etat;
+                // On désactive le GameObject entier, c'est plus stable en VR !
+                childLine.gameObject.SetActive(etat);
             }
         }
     }
 
-    // --- NOUVELLE FONCTION POUR VERROUILLER L'OBJET ---
-    public void VerrouillerObjetDansSocket(SelectEnterEventArgs args)
-    {
-        // On récupère l'objet qui vient de se clipser dans le socket
-        XRGrabInteractable objetPose = args.interactableObject.transform.GetComponent<XRGrabInteractable>();
+    // --- GESTION DE L'ACTION DU SOCKET ---
 
+    // Fonction PRINCIPALE à appeler dans l'événement "Select Entered" DU SOCKET
+    public void TraiterObjetRecu(SelectEnterEventArgs args)
+    {
+        // 1. On utilise la méthode de verrouillage par calque (Interaction Layer)
+        VerrouillerObjetDansSocket(args);
+
+        // (Note : Si tu préfères l'autre méthode qui fige complètement la physique, 
+        // mets la ligne au-dessus en commentaire et décommente la ligne du dessous)
+        // FigerObjetDansSocket(args);
+
+        // 2. On éteint la ligne de ce socket par sécurité
+        XRSocketInteractor socketRempli = args.interactorObject as XRSocketInteractor;
+        if (socketRempli != null)
+        {
+            ChangerEtatLigne(socketRempli, false);
+        }
+
+        // 3. On tire au sort le prochain socket !
+        ActivateOneRandomSocket();
+    }
+
+    private void VerrouillerObjetDansSocket(SelectEnterEventArgs args)
+    {
+        XRGrabInteractable objetPose = args.interactableObject.transform.GetComponent<XRGrabInteractable>();
         if (objetPose != null)
         {
-            // On change son calque d'interaction pour qu'il échappe aux mains
             objetPose.interactionLayers = InteractionLayerMask.GetMask("Verrouille");
         }
+    }
+
+    private void FigerObjetDansSocket(SelectEnterEventArgs args)
+    {
+        GameObject objetPose = args.interactableObject.transform.gameObject;
+        Transform pointAttache = args.interactorObject.GetAttachTransform(args.interactableObject);
+
+        XRGrabInteractable grabComp = objetPose.GetComponent<XRGrabInteractable>();
+        if (grabComp != null) grabComp.enabled = false;
+
+        Rigidbody rb = objetPose.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.isKinematic = true; 
+            rb.useGravity = false;
+            rb.velocity = Vector3.zero; 
+            rb.angularVelocity = Vector3.zero;
+        }
+
+        Transform parentTransform = (pointAttache != null) ? pointAttache : args.interactorObject.transform;
+        objetPose.transform.SetParent(parentTransform);
+        objetPose.transform.localPosition = Vector3.zero;
+        objetPose.transform.localRotation = Quaternion.identity;
     }
 }
