@@ -8086,6 +8086,14 @@ PrefabInstance:
       value: Scroll
       objectReference: {fileID: 0}
     - target: {fileID: 8739362983424489203, guid: ab9f5ca7225204241b7a49bdab0f20d0, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8739362983424489203, guid: ab9f5ca7225204241b7a49bdab0f20d0, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8739362983424489203, guid: ab9f5ca7225204241b7a49bdab0f20d0, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1075302778}
@@ -8095,11 +8103,11 @@ PrefabInstance:
       objectReference: {fileID: 1075302778}
     - target: {fileID: 8739362983424489203, guid: ab9f5ca7225204241b7a49bdab0f20d0, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: EteindreLigne
+      value: EteindreLigneSiJoueur
       objectReference: {fileID: 0}
     - target: {fileID: 8739362983424489203, guid: ab9f5ca7225204241b7a49bdab0f20d0, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AllumerLigne
+      value: AllumerLigneSiJoueur
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
