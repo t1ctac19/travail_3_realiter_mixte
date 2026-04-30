@@ -5266,6 +5266,14 @@ PrefabInstance:
       propertyPath: m_enableAutoSizing
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8382796324467901011, guid: 8159a21181ebcb24aa4a8c4332da81b3, type: 3}
+      propertyPath: sunColor.key0.b
+      value: 0.47843137
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382796324467901011, guid: 8159a21181ebcb24aa4a8c4332da81b3, type: 3}
+      propertyPath: sunColor.key0.g
+      value: 0.8235294
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
