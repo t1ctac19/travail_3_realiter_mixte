@@ -5,6 +5,8 @@ using UnityEngine;
 public class joueur : MonoBehaviour
 {
     public GameObject Beam;
+    public GameObject exit;
+
 
     private void OnTriggerEnter(Collider other)
     {
