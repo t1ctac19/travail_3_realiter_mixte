@@ -1,10 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class ExitZone : MonoBehaviour
 {
     public int argentRequis = 100;
+
+    #if UNITY_EDITOR
+    public SceneAsset sceneToLoad; // Drag & drop ici
+    #endif
+
+    private string sceneName;
+
+    private void Awake()
+    {
+        #if UNITY_EDITOR
+        if (sceneToLoad != null)
+        {
+            sceneName = sceneToLoad.name;
+        }
+        #endif
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,9 +39,15 @@ public class ExitZone : MonoBehaviour
                 if (moneySysteme.money >= argentRequis)
                 {
                     Debug.Log("Tu peux sortir !");
-                    
-                    // Exemple :
-                    // SceneManager.LoadScene("NextLevel");
+
+                    if (!string.IsNullOrEmpty(sceneName))
+                    {
+                        SceneManager.LoadScene(sceneName);
+                    }
+                    else
+                    {
+                        Debug.Log("Aucune scène assignée !");
+                    }
                 }
                 else
                 {
