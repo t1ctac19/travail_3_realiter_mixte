@@ -822,6 +822,74 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 430074, guid: c34c166783f3c744686ef9143de6e3fe, type: 3}
   m_PrefabInstance: {fileID: 156836084}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &163839547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 163839550}
+  - component: {fileID: 163839549}
+  - component: {fileID: 163839548}
+  m_Layer: 0
+  m_Name: exit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &163839548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163839547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78542a5f55835cb43bd7cef726185f4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  argentRequis: 25
+  sceneToLoad: {fileID: 102900000, guid: fe28e434bfea4c743a3f7c76cef2f69e, type: 3}
+--- !u!65 &163839549
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163839547}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &163839550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163839547}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.68513423, z: -0, w: 0.72841686}
+  m_LocalPosition: {x: -89.38, y: 1.509, z: -42.84}
+  m_LocalScale: {x: 0.62953, y: 1, z: 6.0404263}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -86.492, z: 0}
 --- !u!1 &173427067 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ea31da6476329c5449adcfce9fe83079, type: 3}
@@ -2824,6 +2892,10 @@ PrefabInstance:
       propertyPath: m_AllowMSAA
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6453012894141940154, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6589297311373253496, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.220417
@@ -2871,7 +2943,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6453012894141940154, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1887524422}
   m_SourcePrefab: {fileID: 100100000, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
 --- !u!4 &377775220 stripped
 Transform:
@@ -16825,6 +16900,26 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9f9b5f3a4df0e34193a1a6caa5d0f2c, type: 3}
+--- !u!1 &1887524414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6453012894141940154, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
+  m_PrefabInstance: {fileID: 376445587}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1887524422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887524414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb066d9eb80ab9a408b1fbbe2552af44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanvasMoney: {fileID: 0}
+  moneyText: {fileID: 0}
+  money: 0
 --- !u!4 &1889078942 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c2342894cda818b43b6b3b2e57505b39, type: 3}
@@ -19097,3 +19192,4 @@ SceneRoots:
   - {fileID: 1158139224}
   - {fileID: 146593431}
   - {fileID: 878160975}
+  - {fileID: 163839550}
