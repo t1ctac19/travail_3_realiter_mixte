@@ -42,7 +42,11 @@ MonoBehaviour:
   Path: fmod_son/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< Updated upstream
   lastModified: 639131622507087828
+=======
+  lastModified: 639131647203464097
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
     Value: 3151232
@@ -73,7 +77,11 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 1307861962340640545}
   cacheVersion: 131859
+<<<<<<< Updated upstream
   cacheTime: 639131622507108208
+=======
+  cacheTime: 639131647203474092
+>>>>>>> Stashed changes
   SerializableEventsDict:
   - key: event:/ambiance_01
     index: 0
@@ -98,7 +106,11 @@ MonoBehaviour:
   Path: fmod_son/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< Updated upstream
   lastModified: 639131622507108208
+=======
+  lastModified: 639131647203474092
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
     Value: 880
