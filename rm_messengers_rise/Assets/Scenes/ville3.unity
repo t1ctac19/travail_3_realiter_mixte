@@ -66912,6 +66912,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1666340272}
     - target: {fileID: 8739362983424489203, guid: ab9f5ca7225204241b7a49bdab0f20d0, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8739362983424489203, guid: ab9f5ca7225204241b7a49bdab0f20d0, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8739362983424489203, guid: ab9f5ca7225204241b7a49bdab0f20d0, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1974580291}
@@ -66919,6 +66927,14 @@ PrefabInstance:
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1974580291}
+    - target: {fileID: 8739362983424489203, guid: ab9f5ca7225204241b7a49bdab0f20d0, type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EteindreLigneSiJoueur
+      objectReference: {fileID: 0}
+    - target: {fileID: 8739362983424489203, guid: ab9f5ca7225204241b7a49bdab0f20d0, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AllumerLigneSiJoueur
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
