@@ -9,7 +9,11 @@ using UnityEditor;
 
 public class ExitZone : MonoBehaviour
 {
+    [Header("Configuration")]
     public int argentRequis = 100;
+    
+    // La variable porte maintenant le bon nom
+    public SocketRandomizer socketManager; 
 
     #if UNITY_EDITOR
     public SceneAsset sceneToLoad; // Drag & drop ici
@@ -29,16 +33,18 @@ public class ExitZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Quelque chose est entré dans la zone");
+        Debug.Log("Quelque chose est entré dans la zone : " + other.name);
+        
         if (other.CompareTag("Player"))
         {
-            ToggleMoneyOnKey moneySysteme = other.GetComponent<ToggleMoneyOnKey>();
             Debug.Log("C'est le joueur !");
-            if (moneySysteme != null)
+
+            if (socketManager != null)
             {
-                if (moneySysteme.money >= argentRequis)
+                // On vérifie directement l'argent dans ton SocketManager
+                if (socketManager.argentTotal >= argentRequis)
                 {
-                    Debug.Log("Tu peux sortir !");
+                    Debug.Log("Tu as assez d'argent, tu peux sortir !");
 
                     if (!string.IsNullOrEmpty(sceneName))
                     {
@@ -46,17 +52,17 @@ public class ExitZone : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("Aucune scène assignée !");
+                        Debug.LogWarning("Aucune scène assignée dans sceneToLoad !");
                     }
                 }
                 else
                 {
-                    Debug.Log("Pas assez d'argent !");
+                    Debug.Log("Pas assez d'argent ! Il te manque " + (argentRequis - socketManager.argentTotal) + "$");
                 }
             }
             else
             {
-                Debug.Log("Script ToggleMoneyOnKey non trouvé sur le joueur !");
+                Debug.LogError("Attention : Le script SocketManager n'est pas assigné dans l'inspecteur !");
             }
         }
     }
