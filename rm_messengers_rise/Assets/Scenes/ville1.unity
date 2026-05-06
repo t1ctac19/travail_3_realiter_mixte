@@ -1852,8 +1852,20 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5597758483303765904, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
+      propertyPath: m_RotateSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597758483303765904, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
       propertyPath: m_UseForceGrab
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597758483303765904, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
+      propertyPath: m_TranslateSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597758483303765904, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
+      propertyPath: m_AllowAnchorControl
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5597758483303765904, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
       propertyPath: m_SelectActionTrigger
@@ -1862,6 +1874,10 @@ PrefabInstance:
     - target: {fileID: 5627644508164262683, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
       propertyPath: m_UseForceGrab
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627644508164262683, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
+      propertyPath: m_AllowAnchorControl
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5627644508164262683, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
       propertyPath: m_SelectActionTrigger
@@ -1930,6 +1946,10 @@ PrefabInstance:
     - target: {fileID: 7261574272963853569, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174921751603288497, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
