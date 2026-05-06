@@ -126,7 +126,7 @@ public class SocketRandomizer : MonoBehaviour
         }
     }
 
-    private void FigerObjetDansSocket(SelectEnterEventArgs args)
+    public void FigerObjetDansSocket(SelectEnterEventArgs args)
     {
         GameObject objetPose = args.interactableObject.transform.gameObject;
         Transform pointAttache = args.interactorObject.GetAttachTransform(args.interactableObject);
