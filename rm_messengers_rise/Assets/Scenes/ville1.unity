@@ -1539,7 +1539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasMoney: {fileID: 2111495488}
   moneyText: {fileID: 477512493}
-  money: 100
+  money: 0
   popScale: 1.4
   popDuration: 0.2
 --- !u!1 &218690236 stripped
@@ -10261,6 +10261,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 720344090673308283, guid: f194be667c7afff4dbc75dd5006b4d7f, type: 3}
+      propertyPath: moneyManager
+      value: 
+      objectReference: {fileID: 213337391}
     - target: {fileID: 720344090673308283, guid: f194be667c7afff4dbc75dd5006b4d7f, type: 3}
       propertyPath: recompenseParScroll
       value: 5

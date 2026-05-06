@@ -6,75 +6,58 @@ public class SocketRandomizer : MonoBehaviour
 {
     [Header("Système d'Argent")]
     public int argentTotal = 0;
-    public int recompenseParScroll = 15; // Modifie ce montant selon tes besoins dans l'inspecteur
+    public int recompenseParScroll = 15;
+    public ToggleMoneyOnKey moneyManager; // Référence au script UI
 
     [Header("Sockets")]
     public List<XRSocketInteractor> allSockets;
 
-    // Cette variable va mémoriser le socket qui a été choisi au hasard
     private XRSocketInteractor socketActif;
 
     void Start()
     {
         ActivateOneRandomSocket();
-        
-        // Correction : On utilise la fonction utilitaire pour éteindre au démarrage
         if (socketActif != null)
-        {
             ChangerEtatLigne(socketActif, false);
-        }
     }
 
     public void ActivateOneRandomSocket()
     {
         if (allSockets.Count == 0) return;
 
-        // 1. On crée une liste temporaire avec uniquement les sockets VIDES
         List<XRSocketInteractor> socketsVides = new List<XRSocketInteractor>();
-        
         foreach (var socket in allSockets)
         {
-            if (!socket.hasSelection) 
-            {
+            if (!socket.hasSelection)
                 socketsVides.Add(socket);
-            }
         }
 
-        // S'il n'y a plus de sockets vides (le jeu est fini), on arrête
         if (socketsVides.Count == 0) return;
 
-        // 2. On choisit un socket au hasard PARMI LES VIDES
         int randomIndex = Random.Range(0, socketsVides.Count);
-        socketActif = socketsVides[randomIndex]; 
+        socketActif = socketsVides[randomIndex];
 
-        // 3. On met à jour l'état de tous les sockets de la scène
         foreach (var socket in allSockets)
         {
             if (socket.hasSelection)
             {
-                // Si le socket a déjà un objet, il DOIT rester activé pour le retenir !
-                socket.enabled = true; 
-                ChangerEtatLigne(socket, false); 
+                socket.enabled = true;
+                ChangerEtatLigne(socket, false);
             }
             else
             {
-                // S'il est vide, on l'active SEULEMENT si c'est le nouveau socket actif
                 socket.enabled = (socket == socketActif);
-                ChangerEtatLigne(socket, false); 
+                ChangerEtatLigne(socket, false);
             }
         }
     }
 
-    // --- GESTION DE L'AFFICHAGE DE LA LIGNE ---
-
-    // Fonction à appeler quand l'objet est PRIS (Select Entered sur l'Objet)
     public void AllumerLigneSiJoueur(SelectEnterEventArgs args)
     {
         if (args.interactorObject is XRSocketInteractor) return;
         ChangerEtatLigne(socketActif, true);
     }
 
-    // Fonction à appeler quand l'objet est LÂCHÉ (Select Exited sur l'Objet)
     public void EteindreLigneSiJoueur(SelectExitEventArgs args)
     {
         if (args.interactorObject is XRSocketInteractor) return;
@@ -87,36 +70,31 @@ public class SocketRandomizer : MonoBehaviour
         {
             Transform childLine = socket.transform.Find("Line");
             if (childLine != null)
-            {
-                // On désactive le GameObject entier, c'est plus stable en VR !
                 childLine.gameObject.SetActive(etat);
-            }
         }
     }
 
-    // --- GESTION DE L'ACTION DU SOCKET ---
-
-    // Fonction PRINCIPALE à appeler dans l'événement "Select Entered" DU SOCKET
     public void TraiterObjetRecu(SelectEnterEventArgs args)
     {
-        // --- NOUVEAUTÉ : AJOUT DE L'ARGENT ---
-        argentTotal += recompenseParScroll;
-        Debug.Log("Scroll déposé ! Argent total actuel : " + argentTotal);
+        // Ajout de l'argent via ToggleMoneyOnKey
+        if (moneyManager != null)
+            moneyManager.AddMoney(recompenseParScroll);
+        else
+            Debug.LogWarning("moneyManager non assigné dans SocketRandomizer !");
 
+        argentTotal += recompenseParScroll; // Garde le total local en sync
+        Debug.Log("Scroll déposé ! Argent total : " + argentTotal);
 
         FigerObjetDansSocket(args);
 
-        // 2. On éteint la ligne de ce socket par sécurité
         XRSocketInteractor socketRempli = args.interactorObject as XRSocketInteractor;
         if (socketRempli != null)
-        {
             ChangerEtatLigne(socketRempli, false);
-        }
 
-        // 3. On tire au sort le prochain socket !
         ActivateOneRandomSocket();
     }
 
+<<<<<<< Updated upstream
     private void VerrouillerObjetDansSocket(SelectEnterEventArgs args)
     {
         XRGrabInteractable objetPose = args.interactableObject.transform.GetComponent<XRGrabInteractable>();
@@ -127,6 +105,9 @@ public class SocketRandomizer : MonoBehaviour
     }
 
     public void FigerObjetDansSocket(SelectEnterEventArgs args)
+=======
+    private void FigerObjetDansSocket(SelectEnterEventArgs args)
+>>>>>>> Stashed changes
     {
         GameObject objetPose = args.interactableObject.transform.gameObject;
         Transform pointAttache = args.interactorObject.GetAttachTransform(args.interactableObject);
@@ -137,9 +118,9 @@ public class SocketRandomizer : MonoBehaviour
         Rigidbody rb = objetPose.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.isKinematic = true; 
+            rb.isKinematic = true;
             rb.useGravity = false;
-            rb.velocity = Vector3.zero; 
+            rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
         }
 

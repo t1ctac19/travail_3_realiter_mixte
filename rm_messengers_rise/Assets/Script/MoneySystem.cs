@@ -15,7 +15,6 @@ public class ToggleMoneyOnKey : MonoBehaviour
     public float popScale = 1.4f;
     public float popDuration = 0.2f;
 
-    // INITIALIZATION MONEY
     void Start()
     {
         CanvasMoney.SetActive(false);
@@ -48,33 +47,26 @@ public class ToggleMoneyOnKey : MonoBehaviour
     IEnumerator PopAnimation()
     {
         float elapsed = 0f;
-
-        // Grossit
         while (elapsed < popDuration)
         {
             elapsed += Time.deltaTime;
             float t = elapsed / popDuration;
-            float scale = Mathf.Lerp(1f, popScale, t);
-            moneyText.transform.localScale = Vector3.one * scale;
+            moneyText.transform.localScale = Vector3.one * Mathf.Lerp(1f, popScale, t);
             yield return null;
         }
 
         elapsed = 0f;
-
-        // Rétrécit
         while (elapsed < popDuration)
         {
             elapsed += Time.deltaTime;
             float t = elapsed / popDuration;
-            float scale = Mathf.Lerp(popScale, 1f, t);
-            moneyText.transform.localScale = Vector3.one * scale;
+            moneyText.transform.localScale = Vector3.one * Mathf.Lerp(popScale, 1f, t);
             yield return null;
         }
 
         moneyText.transform.localScale = Vector3.one;
     }
 
-    // UPDATE MONEY TEXT
     void UpdateMoneyText()
     {
         if (moneyText != null)
