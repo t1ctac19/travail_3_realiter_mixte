@@ -61677,9 +61677,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6453012894141940154, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1164821262}
     - targetCorrespondingSourceObject: {fileID: 5646057748237179110, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 55883595}
@@ -78072,28 +78069,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5987757717295252365, guid: 766691af7d3bfb84299d7ffbbd8d3cae, type: 3}
---- !u!1 &1164821254 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6453012894141940154, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
-  m_PrefabInstance: {fileID: 932828409}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1164821262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164821254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb066d9eb80ab9a408b1fbbe2552af44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CanvasMoney: {fileID: 0}
-  moneyText: {fileID: 0}
-  money: 0
-  popScale: 1.4
-  popDuration: 0.2
 --- !u!1 &1165599658 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3241283954385898620, guid: 766691af7d3bfb84299d7ffbbd8d3cae, type: 3}
