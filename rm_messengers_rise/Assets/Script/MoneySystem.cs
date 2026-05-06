@@ -8,6 +8,9 @@ public class ToggleMoneyOnKey : MonoBehaviour
     public GameObject CanvasMoney;
     public TextMeshProUGUI moneyText;
 
+    [Header("Popup Gain Argent")]
+    public GameObject popupPrefab;
+
     [Header("Money Settings")]
     public int money = 0;
 
@@ -26,6 +29,11 @@ public class ToggleMoneyOnKey : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
             CanvasMoney.SetActive(!CanvasMoney.activeSelf);
         Debug.Log("Touche Appuyé");
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            AddMoney(15);
+        }
     }
 
     public void AddMoney(int amount)
@@ -33,6 +41,7 @@ public class ToggleMoneyOnKey : MonoBehaviour
         money += amount;
         UpdateMoneyText();
         StartCoroutine(PopAnimation());
+        ShowMoneyPopup(amount);
     }
 
     public void RemoveMoney(int amount)
@@ -40,6 +49,26 @@ public class ToggleMoneyOnKey : MonoBehaviour
         money -= amount;
         UpdateMoneyText();
         StartCoroutine(PopAnimation());
+    }
+
+    public void ShowMoneyPopup(int amount)
+    {
+        if (popupPrefab == null)
+        {
+            Debug.LogWarning("PopupPrefab manquant !");
+            return;
+        }
+
+        // Instancie directement dans le même parent que le moneyText
+        GameObject popup = Instantiate(popupPrefab, moneyText.transform.parent);
+
+        TextMeshProUGUI text = popup.GetComponentInChildren<TextMeshProUGUI>();
+        if (text != null)
+        {
+            text.text = "+" + amount + "<color=#118C4F>$</color>";
+        }
+
+        Destroy(popup, 1.5f);
     }
 
     IEnumerator PopAnimation()
