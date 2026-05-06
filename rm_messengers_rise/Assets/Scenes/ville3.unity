@@ -9128,7 +9128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78542a5f55835cb43bd7cef726185f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  argentRequis: 100
+  argentRequis: 120
+  socketManager: {fileID: 0}
   sceneToLoad: {fileID: 0}
 --- !u!1001 &327629137
 PrefabInstance:
@@ -20782,6 +20783,8 @@ MonoBehaviour:
   CanvasMoney: {fileID: 956036430}
   moneyText: {fileID: 787398645}
   money: 0
+  popScale: 1.4
+  popDuration: 0.2
 --- !u!1001 &668646661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28585,7 +28588,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &956036431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61499,6 +61502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f7d64c103bb1c3498856d0526010d8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  argentTotal: 0
+  recompenseParScroll: 30
   allSockets:
   - {fileID: 785053661}
   - {fileID: 1959954636}
