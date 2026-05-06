@@ -23,11 +23,9 @@ public class ToggleMoneyOnKey : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
-            CanvasMoney.SetActive(!CanvasMoney.activeSelf);
-
         if (Input.GetKeyDown(KeyCode.Space))
-            AddMoney(10);
+            CanvasMoney.SetActive(!CanvasMoney.activeSelf);
+        Debug.Log("Touche Appuyé");
     }
 
     public void AddMoney(int amount)
