@@ -82,7 +82,7 @@ public class SocketRandomizer : MonoBehaviour
         else
             Debug.LogWarning("moneyManager non assigné dans SocketRandomizer !");
 
-        argentTotal += recompenseParScroll; // Garde le total local en sync
+        argentTotal += recompenseParScroll;
         Debug.Log("Scroll déposé ! Argent total : " + argentTotal);
 
         FigerObjetDansSocket(args);
@@ -94,7 +94,6 @@ public class SocketRandomizer : MonoBehaviour
         ActivateOneRandomSocket();
     }
 
-<<<<<<< Updated upstream
     private void VerrouillerObjetDansSocket(SelectEnterEventArgs args)
     {
         XRGrabInteractable objetPose = args.interactableObject.transform.GetComponent<XRGrabInteractable>();
@@ -105,9 +104,6 @@ public class SocketRandomizer : MonoBehaviour
     }
 
     public void FigerObjetDansSocket(SelectEnterEventArgs args)
-=======
-    private void FigerObjetDansSocket(SelectEnterEventArgs args)
->>>>>>> Stashed changes
     {
         GameObject objetPose = args.interactableObject.transform.gameObject;
         Transform pointAttache = args.interactorObject.GetAttachTransform(args.interactableObject);
