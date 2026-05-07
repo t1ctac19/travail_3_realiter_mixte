@@ -28,7 +28,6 @@ public class ToggleMoneyOnKey : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
             CanvasMoney.SetActive(!CanvasMoney.activeSelf);
-        Debug.Log("Touche Appuyé");
 
         if (Input.GetKeyDown(KeyCode.M))
         {
@@ -59,7 +58,7 @@ public class ToggleMoneyOnKey : MonoBehaviour
             return;
         }
 
-        // Instancie directement dans le même parent que le moneyText
+        // Instancie directement dans le mï¿½me parent que le moneyText
         GameObject popup = Instantiate(popupPrefab, moneyText.transform.parent);
 
         TextMeshProUGUI text = popup.GetComponentInChildren<TextMeshProUGUI>();
