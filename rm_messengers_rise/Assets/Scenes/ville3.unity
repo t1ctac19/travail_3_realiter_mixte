@@ -4282,6 +4282,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: moneyUI
       objectReference: {fileID: 0}
+    - target: {fileID: 8260847395629016542, guid: d4d16610244785e45a6197165c212077, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 3616507159475064206}
+    - target: {fileID: 8260847395629016542, guid: d4d16610244785e45a6197165c212077, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8260847395629016542, guid: d4d16610244785e45a6197165c212077, type: 3}
+      propertyPath: m_PlaneDistance
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8606511261701449933, guid: d4d16610244785e45a6197165c212077, type: 3}
       propertyPath: m_LocalPosition.x
       value: 822.41156
@@ -57251,9 +57263,9 @@ Canvas:
   m_GameObject: {fileID: 1824149059}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 3616507159475064206}
+  m_PlaneDistance: 0.1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -68684,6 +68696,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1851352417}
   m_SourcePrefab: {fileID: 100100000, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
+--- !u!20 &3616507159475064206 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5646057748237179104, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
+  m_PrefabInstance: {fileID: 3616507159475064205}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4297048392685526994
 PrefabInstance:
   m_ObjectHideFlags: 0
