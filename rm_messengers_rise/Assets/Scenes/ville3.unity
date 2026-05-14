@@ -9494,6 +9494,7 @@ MonoBehaviour:
   panneauManqueArgent: {fileID: 0}
   dureeAffichageFeedback: 2
   sceneToLoad: {fileID: 102900000, guid: 487764f806a74f54692ce342679202d5, type: 3}
+  sceneName: victoire
 --- !u!1001 &327629137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68892,7 +68893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1273357494783204280, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2143448155820137539, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
       propertyPath: m_SelectActionTrigger

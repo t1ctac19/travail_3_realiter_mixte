@@ -1,4 +1,4 @@
-Library: C:\Users\2497735\Documents\GitHub\travail_3_realiter_mixte\rm_messengers_rise\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+Library: C:\Users\2496312\Documents\GitHub\travail_3_realiter_mixte\rm_messengers_rise\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --platform=Windows
 --backend=burst-llvm-18
 --target=X64_SSE2
@@ -9,10 +9,10 @@ Library: C:\Users\2497735\Documents\GitHub\travail_3_realiter_mixte\rm_messenger
 --target-framework=NetFramework
 --linker-options=PdbAltPath="rm_messengers_rise_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\2497735\Documents\GitHub\travail_3_realiter_mixte\rm_messengers_rise\Temp\Burst
+--temp-folder=C:\Users\2496312\Documents\GitHub\travail_3_realiter_mixte\rm_messengers_rise\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/2022.3.62f3/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\2497735\Documents\GitHub\travail_3_realiter_mixte\rm_messengers_rise\Library\Burst
---output=C:\Users\2497735\Documents\GitHub\travail_3_realiter_mixte\rm_messengers_rise\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\2496312\Documents\GitHub\travail_3_realiter_mixte\rm_messengers_rise\Library\Burst
+--output=C:\Users\2496312\Documents\GitHub\travail_3_realiter_mixte\rm_messengers_rise\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=UnityEngine.XR.Interaction.Toolkit.Utilities.BurstMathUtility, Unity.XR.Interaction.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::ProjectOnPlane(Unity.Mathematics.float3&, Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Mathematics.float3&, Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Mathematics.float3&, Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)--1819bc9925667b008fd6c3e6019ccf71
@@ -90,10 +90,10 @@ Library: C:\Users\2497735\Documents\GitHub\travail_3_realiter_mixte\rm_messenger
 --target-framework=NetFramework
 --linker-options=PdbAltPath="rm_messengers_rise_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\2497735\Documents\GitHub\travail_3_realiter_mixte\rm_messengers_rise\Temp\Burst
+--temp-folder=C:\Users\2496312\Documents\GitHub\travail_3_realiter_mixte\rm_messengers_rise\Temp\Burst
 --key-folder=C:/Program Files/Unity/Hub/Editor/2022.3.62f3/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
---decode-folder=C:\Users\2497735\Documents\GitHub\travail_3_realiter_mixte\rm_messengers_rise\Library\Burst
---output=C:\Users\2497735\Documents\GitHub\travail_3_realiter_mixte\rm_messengers_rise\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
+--decode-folder=C:\Users\2496312\Documents\GitHub\travail_3_realiter_mixte\rm_messengers_rise\Library\Burst
+--output=C:\Users\2496312\Documents\GitHub\travail_3_realiter_mixte\rm_messengers_rise\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 --method=UnityEngine.XR.Interaction.Toolkit.Utilities.BurstMathUtility, Unity.XR.Interaction.Toolkit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::ProjectOnPlane(Unity.Mathematics.float3&, Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Mathematics.float3&, Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|Unity.Mathematics.float3&, Unity.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null)--1819bc9925667b008fd6c3e6019ccf71

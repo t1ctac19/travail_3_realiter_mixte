@@ -857,6 +857,7 @@ MonoBehaviour:
   panneauManqueArgent: {fileID: 0}
   dureeAffichageFeedback: 2
   sceneToLoad: {fileID: 102900000, guid: fe28e434bfea4c743a3f7c76cef2f69e, type: 3}
+  sceneName: ville2
 --- !u!65 &163839549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1874,7 +1875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1273357494783204280, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1629482315514750396, guid: 80b2e80b889ffa046b2b199bcc40e8c9, type: 3}
       propertyPath: m_TurnAmount
@@ -9362,7 +9363,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1271224359}
-  - {fileID: 1702598810}
   m_Father: {fileID: 1090253443}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &892678674
@@ -18342,37 +18342,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 271389354}
   m_SourcePrefab: {fileID: 100100000, guid: ee1b20dbcffbf94429a158d5093ce961, type: 3}
---- !u!1 &1702598809
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1702598810}
-  m_Layer: 0
-  m_Name: PopUp
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1702598810
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1702598809}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 892265780}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1705152640
 PrefabInstance:
   m_ObjectHideFlags: 0

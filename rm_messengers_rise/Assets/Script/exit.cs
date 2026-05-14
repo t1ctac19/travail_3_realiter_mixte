@@ -1,4 +1,3 @@
-// exit.cs
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,62 +11,63 @@ public class ExitZone : MonoBehaviour
     public int argentRequis = 50;
 
     [Header("Références")]
-    public ToggleMoneyOnKey moneyManager; // Source de vérité unique
+    public ToggleMoneyOnKey moneyManager;
 
-    [Header("Feedback UI (optionnel)")]
-    public GameObject panneauManqueArgent; // Panel "Pas assez d'argent !"
+    [Header("Feedback UI")]
+    public GameObject panneauManqueArgent;
     public float dureeAffichageFeedback = 2f;
 
+    [Header("Scene à charger")]
 #if UNITY_EDITOR
     public SceneAsset sceneToLoad;
 #endif
 
-    private string sceneName;
-    private bool enCooldown = false; // Évite les doubles triggers
+    [SerializeField] private string sceneName;
+
+    private bool enCooldown = false;
 
     private void Awake()
     {
-#if UNITY_EDITOR
-        if (sceneToLoad != null)
-            sceneName = sceneToLoad.name;
-#endif
         if (panneauManqueArgent != null)
             panneauManqueArgent.SetActive(false);
     }
 
+#if UNITY_EDITOR
+    private void OnValidate()
+    {
+        if (sceneToLoad != null)
+        {
+            sceneName = sceneToLoad.name;
+        }
+    }
+#endif
+
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player") || enCooldown) return;
+        if (!other.CompareTag("Player") || enCooldown)
+            return;
 
         if (moneyManager == null)
         {
-            Debug.LogError("moneyManager non assigné dans ExitZone !");
+            Debug.LogError("moneyManager non assigné !");
             return;
         }
 
-        // Vérifie si le joueur a assez d'argent
         if (moneyManager.money >= argentRequis)
         {
-            Debug.Log($"Achat du passage ({argentRequis}$) — Argent avant : {moneyManager.money}$");
-
-            //  Décrémente le montant exact du passage
             moneyManager.RemoveMoney(argentRequis);
 
-            Debug.Log($"Argent après achat : {moneyManager.money}$");
-
-            // Charge la scène suivante
             if (!string.IsNullOrEmpty(sceneName))
+            {
                 SceneManager.LoadScene(sceneName);
+            }
             else
-                Debug.LogWarning("Aucune scène assignée dans sceneToLoad !");
+            {
+                Debug.LogError("Aucune scène assignée !");
+            }
         }
         else
         {
-            //  Pas assez d'argent
-            int manque = argentRequis - moneyManager.money;
-            Debug.Log($"Pas assez d'argent ! Il manque {manque}$ pour passer.");
-
-            // Affiche le feedback UI si assigné
             if (panneauManqueArgent != null)
                 StartCoroutine(AfficherFeedback());
         }
@@ -76,9 +76,13 @@ public class ExitZone : MonoBehaviour
     private System.Collections.IEnumerator AfficherFeedback()
     {
         enCooldown = true;
+
         panneauManqueArgent.SetActive(true);
+
         yield return new WaitForSeconds(dureeAffichageFeedback);
+
         panneauManqueArgent.SetActive(false);
+
         enCooldown = false;
     }
 }
