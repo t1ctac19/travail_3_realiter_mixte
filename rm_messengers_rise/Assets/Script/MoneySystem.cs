@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using TMPro;
 using System.Collections;
 
@@ -18,21 +19,35 @@ public class ToggleMoneyOnKey : MonoBehaviour
     public float popScale = 1.4f;
     public float popDuration = 0.2f;
 
+    [Header("Input Action")]
+    public InputActionReference toggleMenuAction;
+
     void Start()
     {
         CanvasMoney.SetActive(false);
         UpdateMoneyText();
+        toggleMenuAction.action.Enable();
+        toggleMenuAction.action.performed += OnToggleMenu;
+    }
+
+    void OnDestroy()
+    {
+        toggleMenuAction.action.performed -= OnToggleMenu;
+    }
+
+    void OnToggleMenu(InputAction.CallbackContext ctx)
+    {
+        CanvasMoney.SetActive(!CanvasMoney.activeSelf);
     }
 
     void Update()
     {
+        // PC
         if (Input.GetKeyDown(KeyCode.Space))
             CanvasMoney.SetActive(!CanvasMoney.activeSelf);
 
         if (Input.GetKeyDown(KeyCode.M))
-        {
             AddMoney(15);
-        }
     }
 
     public void AddMoney(int amount)
@@ -58,15 +73,12 @@ public class ToggleMoneyOnKey : MonoBehaviour
             return;
         }
 
-        // Instancie directement dans le m�me parent que le moneyText
         GameObject popup = Instantiate(popupPrefab, moneyText.transform.parent);
-
         TextMeshProUGUI text = popup.GetComponentInChildren<TextMeshProUGUI>();
         if (text != null)
         {
             text.text = "+" + amount + "<color=#118C4F>$</color>";
         }
-
         Destroy(popup, 1.5f);
     }
 
@@ -80,7 +92,6 @@ public class ToggleMoneyOnKey : MonoBehaviour
             moneyText.transform.localScale = Vector3.one * Mathf.Lerp(1f, popScale, t);
             yield return null;
         }
-
         elapsed = 0f;
         while (elapsed < popDuration)
         {
@@ -89,7 +100,6 @@ public class ToggleMoneyOnKey : MonoBehaviour
             moneyText.transform.localScale = Vector3.one * Mathf.Lerp(popScale, 1f, t);
             yield return null;
         }
-
         moneyText.transform.localScale = Vector3.one;
     }
 
