@@ -9492,7 +9492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   argentRequis: 120
   socketManager: {fileID: 0}
-  sceneToLoad: {fileID: 0}
+  sceneToLoad: {fileID: 102900000, guid: 487764f806a74f54692ce342679202d5, type: 3}
 --- !u!1001 &327629137
 PrefabInstance:
   m_ObjectHideFlags: 0
