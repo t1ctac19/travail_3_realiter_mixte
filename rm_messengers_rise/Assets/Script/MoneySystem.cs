@@ -55,7 +55,7 @@ public class ToggleMoneyOnKey : MonoBehaviour
         money += amount;
         UpdateMoneyText();
         StartCoroutine(PopAnimation());
-        ShowMoneyPopup(amount);
+        StartCoroutine(ShowMoneyPopupTemporary(amount));
     }
 
     public void RemoveMoney(int amount)
@@ -63,6 +63,7 @@ public class ToggleMoneyOnKey : MonoBehaviour
         money -= amount;
         UpdateMoneyText();
         StartCoroutine(PopAnimation());
+        StartCoroutine(ShowMoneyPopupTemporary(-amount));
     }
 
     public void ShowMoneyPopup(int amount)
@@ -80,6 +81,21 @@ public class ToggleMoneyOnKey : MonoBehaviour
             text.text = "+" + amount + "<color=#118C4F>$</color>";
         }
         Destroy(popup, 1.5f);
+    }
+
+    private IEnumerator ShowMoneyPopupTemporary(int amount)
+    {
+        bool etaitActif = CanvasMoney.activeSelf;
+
+        if (!etaitActif)
+            CanvasMoney.SetActive(true); // Ouvre le temps du popup
+
+        ShowMoneyPopup(amount);
+
+        yield return new WaitForSeconds(1.5f); // Même durée que le Destroy du popup
+
+        if (!etaitActif)
+            CanvasMoney.SetActive(false); // Referme seulement si c'était fermé
     }
 
     IEnumerator PopAnimation()
